@@ -109,3 +109,30 @@ def letterCount (countletters) :
     print (dict)
 
 # letterCount("hello world")
+
+# -------------------------------------------------------------
+# Fourth exercise of Intermediate Python Exercises 1
+
+def addIntegersTwo () :
+
+    addedIntegers1 = []
+    i = 1
+    total = 0
+    while (len(addedIntegers1) < 5) :
+        x = input ("Enter int #" + str(i) + ": ")
+        if (x.isdigit()) :
+            addedIntegers1.append(x)
+            i+=1
+        else :
+            while (x.isdigit() == False) :
+                x = input ("Please enter an integer: ")
+                if (x.isdigit()):
+                 addedIntegers1.append(x)
+                 i+=1
+
+    addedIntegers1 = [int(x) for x in addedIntegers1]
+    for i in addedIntegers1 :
+        total += i
+    print ("Total: " + str(total))
+
+# addIntegersTwo()
