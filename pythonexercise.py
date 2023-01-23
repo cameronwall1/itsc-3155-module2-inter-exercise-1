@@ -21,3 +21,60 @@ def uniqueElements () :
     print (unique_list)
 
 # uniqueElements()
+
+# -------------------------------------------------------------
+# Second exercise of Intermediate Python Exercises 1
+
+def getCombinedDict (): 
+    # my_dict_1 = {'a': 5, 'b': 12, 'c': 3, 'd': 9}
+    # my_dict_2 = {'b': 4, 'c': 9, 'd': 10, 'e': 16}
+
+    d = {}
+    for i in range (5) :
+        keys = input("Enter one letter from the alphabet: ")
+        value = int(input("Enter one integer value: "))
+        d[keys] = value
+
+    c = {}
+    for i in range (5) :
+        keys = input("Enter one letter from the alphabet: ")
+        value = int(input("Enter one integer value: "))
+        c[keys] = value
+
+
+    finaldict = {}
+    index1 = []
+    finalindex = []
+    index2 = []
+    templist = []
+    temp = 0
+    y = 0
+
+    for i in d :
+        if (i in c) :
+            convert =  (str([list(d.keys()).index(i)]))
+            convert = convert.strip("[]")
+            index1.append(convert)
+
+            convert = (str([list(c.keys()).index(i)]))
+            convert = convert.strip("[]")
+            index2.append(convert)
+
+    index1 = [int(x) for x in index1]
+    index2 = [int(x) for x in index2]
+
+    while (y < len(index1)):
+         temp = ((int(str(list (d.values())[index1[y]]))) + int(str(list (c.values())[index2[y]])))
+         templist.append(temp)
+         y+=1    
+
+    for s in index1:
+        finalindex.append((str(list (d)[s])))
+    
+    l = 0
+    while (l < len(templist)):
+        finaldict[finalindex[l]] = templist[l]
+        l+=1
+    print (finaldict)
+
+# getCombinedDict ()
