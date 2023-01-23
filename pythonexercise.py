@@ -78,3 +78,34 @@ def getCombinedDict ():
     print (finaldict)
 
 # getCombinedDict ()
+
+# -------------------------------------------------------------
+# Third exercise of Intermediate Python Exercises 1
+
+def letterCount (countletters) :
+    initialList = list(countletters)
+    adjustedlist1 = []
+    dict = {}
+    y = 0
+
+    for i in initialList :
+        if (i not in adjustedlist1) :
+            adjustedlist1.append(i)
+        else :
+            print ("", end = "")
+    
+    keys = adjustedlist1
+
+    for x in keys:
+        dict[x] = 0
+    
+    while (y < len(keys)) :
+        for b in initialList :
+            if ((str(list (dict.keys())[y])) == b) :
+                currentval = (int(str(list (dict.values())[y])))
+                currentval = currentval+1
+                dict [b] = currentval
+        y+=1
+    print (dict)
+
+# letterCount("hello world")
